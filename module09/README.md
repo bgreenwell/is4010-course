@@ -155,8 +155,8 @@ Now that Rust is installed, you'll create your first [Cargo project](https://doc
 
 2. Create a new subdirectory for Lab 09:
    ```bash
-   mkdir lab09
-   cd lab09
+   mkdir module09
+   cd module09
    ```
 
 3. Create a new Cargo project named `rust_basics`:
@@ -426,7 +426,7 @@ is4010-labs/
 │   ├── lab03.py
 │   └── test_lab03.py
 ├── ... (other Python labs)
-├── lab09/
+├── module09/
 │   ├── rust_basics/              # Your Cargo project
 │   │   ├── Cargo.toml            # Project manifest
 │   │   ├── Cargo.lock            # Dependency lock file (auto-generated)
@@ -563,13 +563,13 @@ Your grade is determined by:
 
 1. ✅ **All tests pass locally**:
    ```bash
-   cd lab09/rust_basics
+   cd module09/rust_basics
    cargo test
    ```
 
 2. ✅ **Optional: Document your Playground work**:
    ```bash
-   cd ..  # Back to lab09/
+   cd ..  # Back to module09/
    touch playground_links.md
    # Paste share links from Rust Playground exercises
    ```
@@ -583,7 +583,7 @@ Your grade is determined by:
 4. ✅ **Commit and push all changes**:
    ```bash
    cd ../..  # Back to repo root
-   git add lab09/
+   git add module09/
    git commit -m "Complete Lab 09: Rust basics"
    git push origin main
    ```
@@ -595,10 +595,10 @@ Your grade is determined by:
    - Both `test-python` and `test-rust` jobs should succeed
 
 6. ✅ **Verify repository structure on GitHub**:
-   - `lab09/rust_basics/src/main.rs` exists (your code)
-   - `lab09/rust_basics/Cargo.toml` exists
-   - `lab09/playground_links.md` exists (optional but recommended)
-   - **NO** `lab09/rust_basics/target/` directory (should be in .gitignore)
+   - `module09/rust_basics/src/main.rs` exists (your code)
+   - `module09/rust_basics/Cargo.toml` exists
+   - `module09/playground_links.md` exists (optional but recommended)
+   - **NO** `module09/rust_basics/target/` directory (should be in .gitignore)
 
 ### How You'll Be Graded
 
@@ -700,7 +700,7 @@ After the deadline, the instructor will:
 ### Git and GitHub Issues
 
 **Problem**: `target/` directory keeps appearing in Git
-- **Solution**: Make sure `target/` is in your `.gitignore`. If it's already committed, remove it: `git rm -r --cached lab09/rust_basics/target`
+- **Solution**: Make sure `target/` is in your `.gitignore`. If it's already committed, remove it: `git rm -r --cached module09/rust_basics/target`
 
 **Problem**: Cargo.lock shows merge conflicts
 - **Solution**: It's auto-generated, so just regenerate it: Delete `Cargo.lock`, run `cargo build`, then commit the new version
@@ -921,7 +921,7 @@ This course encourages AI use, but you must be able to **explain every line of c
 
 While not required for this first Rust lab, we **strongly encourage** you to start documenting your AI interactions. In future labs and projects, you'll be required to submit an AI log.
 
-**Create a file: `lab09/AI_LOG.md`**
+**Create a file: `module09/AI_LOG.md`**
 
 ```markdown
 # Lab 09 AI Interaction Log

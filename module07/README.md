@@ -55,7 +55,7 @@ For part 2 of this lab, you will need to install the `requests` library, which i
 
 You will complete two functions to handle saving and loading a list of contacts using the JSON format.
 
-1.  In your forked repository, navigate to the `lab07/` folder and create a new file named `lab07_contact_book.py`.
+1.  In your forked repository, navigate to the `module07/` folder and create a new file named `module07_contact_book.py`.
 2.  Copy all the python code from the "contact book code" section below into this new file.
 3.  Complete the `save_contacts_to_json` and `load_contacts_from_json` functions according to their docstrings. The `load` function must handle a `FileNotFoundError` gracefully.
 
@@ -126,7 +126,7 @@ if __name__ == '__main__':
 
 For this part, you will write a script that fetches live data from a public web API and displays it.
 
-1.  In the `lab07/` folder of your forked repository, create a new file named `lab07_api_client.py`.
+1.  In the `module07/` folder of your forked repository, create a new file named `module07_api_client.py`.
 2.  Choose a public API to work with. Here are some simple options that don't require an API key:
       * **Pokémon API**: `https://pokeapi.co/api/v2/pokemon/ditto`
       * **Open Trivia DB**: `https://opentdb.com/api.php?amount=1`
@@ -194,13 +194,13 @@ if __name__ == '__main__':
 
 ## Part 3: Testing Your Code
 
-Good news! Part 2 (`lab07_api_client.py`) doesn't require automated tests since it depends on external APIs. However, you should manually test it to ensure it works correctly.
+Good news! Part 2 (`module07_api_client.py`) doesn't require automated tests since it depends on external APIs. However, you should manually test it to ensure it works correctly.
 
 **For Part 1 (Contact Book)**, create a test file to verify your JSON functions work correctly.
 
 ### Instructions
 
-1. In the `lab07/` folder, create a file named `test_lab07.py`
+1. In the `module07/` folder, create a file named `test_module07.py`
 2. Copy the test code below into your new file
 
 ### Test code
@@ -209,7 +209,7 @@ Good news! Part 2 (`lab07_api_client.py`) doesn't require automated tests since 
 import pytest
 import json
 import os
-from lab07_contact_book import save_contacts_to_json, load_contacts_from_json
+from module07_contact_book import save_contacts_to_json, load_contacts_from_json
 
 def test_save_contacts_creates_file():
     """Test that save_contacts_to_json creates a JSON file."""
@@ -302,7 +302,7 @@ def test_json_file_is_formatted():
 cd /path/to/your/repository
 
 # Run Lab 07 tests
-pytest lab07/test_lab07.py -v
+pytest module07/test_module07.py -v
 
 # Run all tests
 pytest
@@ -417,10 +417,10 @@ is4010-labs-yourname/
 ├── lab04/                    # Data structures
 ├── lab05/                    # Functions and error handling
 ├── lab06/                    # Object-oriented programming
-└── lab07/                    # Data and APIs ✓
-    ├── lab07_contact_book.py
-    ├── lab07_api_client.py
-    ├── test_lab07.py
+└── module07/                    # Data and APIs ✓
+    ├── module07_contact_book.py
+    ├── module07_api_client.py
+    ├── test_module07.py
     └── contacts.json (created when you run the program)
 ```
 
@@ -566,7 +566,7 @@ This catches cases where the server returns non-JSON data."
 When you are finished, commit and push your lab files to your forked GitHub repository:
 
 ```bash
-git add lab07/
+git add module07/
 git commit -m "Complete Lab 07: Working with External Data"
 git push origin main
 ```

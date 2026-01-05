@@ -73,10 +73,10 @@ print(f"active user emails: {active_user_emails}")
 
 ### Your task
 
-1.  In your `is4010-labs` repository, create a new file named `lab05.py`.
-2.  Copy the messy script's data (the `users` list) into your `lab05.py` file.
+1.  In your `is4010-labs` repository, create a new file named `module05.py`.
+2.  Copy the messy script's data (the `users` list) into your `module05.py` file.
 3.  Use a conversational AI to help you refactor the script. Your prompt should be something like: *"act as a senior python developer. refactor this script into clean, single-purpose functions with [NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html). one function should calculate the average age, and another should get active user emails."*
-4.  Your final `lab05.py` file should contain the `users` list, the new functions you created, and a main execution block (`if __name__ == '__main__':`) that calls your functions to produce the same output as the original script.
+4.  Your final `module05.py` file should contain the `users` list, the new functions you created, and a main execution block (`if __name__ == '__main__':`) that calls your functions to produce the same output as the original script.
 
 ### Understanding `if __name__ == '__main__':`
 
@@ -114,7 +114,7 @@ Your refactored code from part 1 is clean, but it's brittle. It makes assumption
 
 ### Your task
 
-1.  Continue working in your `lab05.py` file.
+1.  Continue working in your `module05.py` file.
 2.  Use an AI assistant to brainstorm potential runtime errors. Ask it: *"review these python functions. what are some potential runtime errors or edge cases? consider empty lists, missing dictionary keys, or incorrect data types."*
 3.  Based on the AI's feedback, add [`try...except`](https://docs.python.org/3/tutorial/errors.html#handling-exceptions) blocks to your functions to handle at least **two** different potential exceptions gracefully.
       * For example, your `calculate_average_age` function should not crash if the user list is empty (which would cause a [`ZeroDivisionError`](https://docs.python.org/3/library/exceptions.html#ZeroDivisionError)).
@@ -129,14 +129,14 @@ You **must** create a test file for this lab to get full credit. This gives you 
 
 ### Setting up the test file
 
-1. In your `lab05/` folder, create a new file named `test_lab05.py`.
+1. In your `module05/` folder, create a new file named `test_module05.py`.
 2. Copy the entire code block below into this new file.
 3. **Do not modify the test file** - it's designed to work with any correct implementation.
 
 ```python
-# test_lab05.py
+# test_module05.py
 import pytest
-from lab05 import calculate_average_age, get_active_user_emails
+from module05 import calculate_average_age, get_active_user_emails
 
 
 @pytest.fixture
@@ -186,14 +186,14 @@ def test_get_active_user_emails_empty_list():
 To run the tests on your local machine:
 
 ```bash
-# Navigate to your lab05 directory
-cd lab05/
+# Navigate to your module05 directory
+cd module05/
 
 # Run the tests
-pytest test_lab05.py
+pytest test_module05.py
 
 # Or run with verbose output to see each test
-pytest -v test_lab05.py
+pytest -v test_module05.py
 ```
 
 If all tests pass, you'll see output like:
@@ -232,17 +232,17 @@ is4010-[your-username]-labs/
 │   ├── lab04.py              # Data structure functions from Lab 04
 │   ├── lab04_prompts.md      # AI interaction documentation from Lab 04
 │   └── test_lab04.py         # Test file for Lab 04 functions (optional)
-├── lab05/
-│   ├── lab05.py              # Refactored functions with error handling (NEW)
-│   └── test_lab05.py         # Test file for Lab 05 functions (REQUIRED)
+├── module05/
+│   ├── module05.py              # Refactored functions with error handling (NEW)
+│   └── test_module05.py         # Test file for Lab 05 functions (REQUIRED)
 └── README.md                 # Repository description (auto-created by GitHub)
 ```
 
 **Key points about this structure:**
-- **`lab05/lab05.py`**: Contains your refactored functions (`calculate_average_age` and `get_active_user_emails`) with proper error handling and a main execution block
-- **`lab05/test_lab05.py`**: Required test file that validates your functions work correctly (provided test code must be copied exactly)
+- **`module05/module05.py`**: Contains your refactored functions (`calculate_average_age` and `get_active_user_emails`) with proper error handling and a main execution block
+- **`module05/test_module05.py`**: Required test file that validates your functions work correctly (provided test code must be copied exactly)
 - **Cumulative structure**: Your repository now contains work from Labs 01-05, showing progression through the course
-- **Function requirements**: Your `lab05.py` should have the original `users` list, two main functions with error handling, and an `if __name__ == '__main__':` block
+- **Function requirements**: Your `module05.py` should have the original `users` list, two main functions with error handling, and an `if __name__ == '__main__':` block
 
 This organized structure demonstrates your growing skills in Python programming, from basic scripts to well-structured, error-resistant code.
 
@@ -265,14 +265,14 @@ Functions and error handling can present unique challenges! Here are solutions t
 - "How do I write a function that takes a list of user dictionaries and returns the average age of users with valid ages?"
 - "Show me how to refactor this code into functions with proper docstrings."
 
-### **Problem: "ModuleNotFoundError: No module named 'lab05'"**
-- **Cause**: The test file can't find your `lab05.py` file
+### **Problem: "ModuleNotFoundError: No module named 'module05'"**
+- **Cause**: The test file can't find your `module05.py` file
 - **Solution**:
-  - Make sure `lab05.py` and `test_lab05.py` are both in the `lab05/` folder
-  - Check that your file is named exactly `lab05.py` (not `Lab05.py` or `lab5.py`)
+  - Make sure `module05.py` and `test_module05.py` are both in the `module05/` folder
+  - Check that your file is named exactly `module05.py` (not `Lab05.py` or `lab5.py`)
   - Ensure you've saved the file before running tests
 
-### **Problem: "AttributeError: module 'lab05' has no attribute 'calculate_average_age'"**
+### **Problem: "AttributeError: module 'module05' has no attribute 'calculate_average_age'"**
 - **Cause**: Your function name doesn't match exactly what the test expects
 - **Solution**:
   - Check that your functions are named exactly `calculate_average_age` and `get_active_user_emails`
@@ -310,7 +310,7 @@ Functions and error handling can present unique challenges! Here are solutions t
 ### **Problem: "Tests pass locally but fail on GitHub Actions"**
 - **Cause**: Environment differences or missing error handling
 - **Solution**:
-  - Make sure you've committed and pushed `lab05.py`
+  - Make sure you've committed and pushed `module05.py`
   - Check that your functions handle ALL edge cases (empty lists, missing keys, invalid data)
   - Verify your function names match exactly: `calculate_average_age` and `get_active_user_emails`
   - Ensure your functions return the correct data types (float for average, list for emails)
@@ -425,14 +425,14 @@ Functions and error handling can present unique challenges! Here are solutions t
 
 ### **Final checklist before considering the lab complete**
 
-- [ ] `lab05/lab05.py` file exists and contains the original `users` list
+- [ ] `module05/module05.py` file exists and contains the original `users` list
 - [ ] File contains `calculate_average_age(users)` function with proper error handling
 - [ ] File contains `get_active_user_emails(users)` function with proper error handling
 - [ ] Both functions have [NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html)
 - [ ] File has `if __name__ == '__main__':` block that calls both functions
 - [ ] Functions handle edge cases gracefully (empty lists, missing keys, invalid data)
-- [ ] `lab05/test_lab05.py` file exists with the provided test code copied exactly
-- [ ] Local testing: `pytest lab05/test_lab05.py` passes all tests
+- [ ] `module05/test_module05.py` file exists with the provided test code copied exactly
+- [ ] Local testing: `pytest module05/test_module05.py` passes all tests
 - [ ] All files have been committed and pushed to [GitHub](https://github.com/)
 - [ ] [GitHub Actions](https://docs.github.com/en/actions) workflow shows a **green checkmark ✅**
 
@@ -442,10 +442,10 @@ Functions and error handling can present unique challenges! Here are solutions t
 
 ## Submission
 
-To complete this lab, commit and push both your `lab05.py` and `test_lab05.py` files to your `is4010-labs` [GitHub](https://github.com/) repository.
+To complete this lab, commit and push both your `module05.py` and `test_module05.py` files to your `is4010-labs` [GitHub](https://github.com/) repository.
 
 ```bash
-git add lab05.py test_lab05.py
+git add module05.py test_module05.py
 git commit -m "Complete lab 05"
 git push origin main
 ```

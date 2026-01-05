@@ -72,10 +72,10 @@ Before starting this lab, ensure you have:
 
 ## Part 1: Project Structure Setup
 
-Create the following structure in your `lab08/` folder:
+Create the following structure in your `module08/` folder:
 
 \`\`\`
-lab08/
+module08/
 ├── weather.py          # Main CLI application
 ├── weather_api.py      # API client class
 ├── favorites.py        # Favorites manager class
@@ -87,7 +87,7 @@ lab08/
 
 ### Step 1: Create .gitignore
 
-Create `lab08/.gitignore`:
+Create `module08/.gitignore`:
 
 \`\`\`gitignore
 # API key configuration
@@ -105,7 +105,7 @@ favorites.json
 
 ### Step 2: Create config template
 
-Create `lab08/config.example.py` (this WILL be committed):
+Create `module08/config.example.py` (this WILL be committed):
 
 \`\`\`python
 """
@@ -125,7 +125,7 @@ WEATHER_API_BASE_URL = "http://api.weatherapi.com/v1"
 
 \`\`\`bash
 # Copy the template
-cp lab08/config.example.py lab08/config.py
+cp module08/config.example.py module08/config.py
 
 # Edit config.py and add your real API key
 # This file is in .gitignore and won't be committed
@@ -135,7 +135,7 @@ cp lab08/config.example.py lab08/config.py
 
 ## Part 2: API Client Class
 
-Create `lab08/weather_api.py` with the WeatherAPI class for fetching weather data. This class should:
+Create `module08/weather_api.py` with the WeatherAPI class for fetching weather data. This class should:
 - Initialize with an API key
 - Have `get_current_weather(location)` method
 - Have `get_forecast(location, days=3)` method
@@ -150,7 +150,7 @@ You'll also need helper functions:
 
 ## Part 3: Favorites Manager Class
 
-Create `lab08/favorites.py` with the FavoritesManager class for managing favorite locations. This class should:
+Create `module08/favorites.py` with the FavoritesManager class for managing favorite locations. This class should:
 - Load favorites from JSON file on initialization
 - Save favorites to JSON file
 - `add(name, location)` - add a favorite (return False if exists)
@@ -163,7 +163,7 @@ Create `lab08/favorites.py` with the FavoritesManager class for managing favorit
 
 ## Part 4: Main CLI Application
 
-Create `lab08/weather.py` with the main CLI using argparse. Your CLI should support these commands:
+Create `module08/weather.py` with the main CLI using argparse. Your CLI should support these commands:
 
 \`\`\`bash
 # Current weather
@@ -191,7 +191,7 @@ python weather.py current home     # if 'home' is a favorite
 
 ## Part 5: Testing
 
-Create `lab08/tests/test_weather.py` with comprehensive tests for the FavoritesManager class:
+Create `module08/tests/test_weather.py` with comprehensive tests for the FavoritesManager class:
 - Test adding favorites
 - Test adding duplicates (should return False)
 - Test removing favorites
@@ -213,31 +213,31 @@ Test your CLI application with these commands:
 
 \`\`\`bash
 # Get current weather
-python lab08/weather.py current London
-python lab08/weather.py current "New York"
-python lab08/weather.py current "Cincinnati, OH"
+python module08/weather.py current London
+python module08/weather.py current "New York"
+python module08/weather.py current "Cincinnati, OH"
 
 # Get forecast
-python lab08/weather.py forecast London
-python lab08/weather.py forecast "Paris" --days 2
+python module08/weather.py forecast London
+python module08/weather.py forecast "Paris" --days 2
 
 # Add favorites
-python lab08/weather.py favorites add home "Cincinnati, OH"
-python lab08/weather.py favorites add work "Columbus, OH"
+python module08/weather.py favorites add home "Cincinnati, OH"
+python module08/weather.py favorites add work "Columbus, OH"
 
 # List favorites
-python lab08/weather.py favorites list
+python module08/weather.py favorites list
 
 # Use favorite in commands
-python lab08/weather.py current home
-python lab08/weather.py forecast home
+python module08/weather.py current home
+python module08/weather.py forecast home
 
 # Remove favorite
-python lab08/weather.py favorites remove work
+python module08/weather.py favorites remove work
 
 # Help
-python lab08/weather.py --help
-python lab08/weather.py current --help
+python module08/weather.py --help
+python module08/weather.py current --help
 \`\`\`
 
 ---
@@ -273,7 +273,7 @@ is4010-labs-yourname/
 ├── lab05/                    # Functions and error handling
 ├── lab06/                    # Object-oriented programming
 ├── lab07/                    # Data and APIs
-└── lab08/                    # Python CLI application ✓
+└── module08/                    # Python CLI application ✓
     ├── weather.py
     ├── weather_api.py
     ├── favorites.py
@@ -297,7 +297,7 @@ This organized structure demonstrates your progression through the Python track,
 - **Cause**: Haven't created config.py from template
 - **Solution**:
   \`\`\`bash
-  cp lab08/config.example.py lab08/config.py
+  cp module08/config.example.py module08/config.py
   # Edit config.py and add your API key
   \`\`\`
 
@@ -328,14 +328,14 @@ This organized structure demonstrates your progression through the Python track,
 - **Cause**: File permissions or directory doesn't exist
 - **Solution**:
   - Make sure you're running from repository root
-  - Check lab08/ directory exists
-  - On Linux/Mac, check permissions: `ls -la lab08/`
+  - Check module08/ directory exists
+  - On Linux/Mac, check permissions: `ls -la module08/`
 
 ### **Problem: Tests fail with "No module named 'weather_api'"**
 - **Cause**: Running tests from wrong directory
 - **Solution**:
-  - Run from repository root: `pytest lab08/tests/`
-  - Or add lab08 to PYTHONPATH: `PYTHONPATH=lab08 pytest lab08/tests/`
+  - Run from repository root: `pytest module08/tests/`
+  - Or add module08 to PYTHONPATH: `PYTHONPATH=module08 pytest module08/tests/`
 
 ### **Problem: "Connection timeout" when fetching weather**
 - **Cause**: Network issues or firewall blocking requests
@@ -348,10 +348,10 @@ This organized structure demonstrates your progression through the Python track,
 ### **Problem: Favorites not persisting after restart**
 - **Cause**: favorites.json not being saved or wrong location
 - **Solution**:
-  - Check if favorites.json exists in lab08/
+  - Check if favorites.json exists in module08/
   - Verify save() method is called after add/remove
   - Check for IOError messages when saving
-  - Make sure lab08/ folder has write permissions
+  - Make sure module08/ folder has write permissions
 
 ---
 
@@ -458,7 +458,7 @@ The `--days` flag is optional and defaults to 3."
 
 \`\`\`bash
 # From repository root
-pytest lab08/tests/ -v
+pytest module08/tests/ -v
 
 # All tests should pass ✓
 \`\`\`
@@ -467,11 +467,11 @@ pytest lab08/tests/ -v
 
 \`\`\`bash
 # Test all subcommands
-python lab08/weather.py current London
-python lab08/weather.py forecast "Paris"
-python lab08/weather.py favorites add test "London"
-python lab08/weather.py favorites list
-python lab08/weather.py favorites remove test
+python module08/weather.py current London
+python module08/weather.py forecast "Paris"
+python module08/weather.py favorites add test "London"
+python module08/weather.py favorites list
+python module08/weather.py favorites remove test
 \`\`\`
 
 ### Step 3: Commit and Push
@@ -480,12 +480,12 @@ python lab08/weather.py favorites remove test
 
 \`\`\`bash
 # Verify config.py is in .gitignore
-cat lab08/.gitignore
+cat module08/.gitignore
 
 # Add only the correct files
-git add lab08/weather.py lab08/weather_api.py lab08/favorites.py
-git add lab08/config.example.py lab08/.gitignore
-git add lab08/tests/test_weather.py
+git add module08/weather.py module08/weather_api.py module08/favorites.py
+git add module08/config.example.py module08/.gitignore
+git add module08/tests/test_weather.py
 
 # Verify you're NOT committing config.py
 git status
@@ -514,7 +514,7 @@ Your lab is complete when:
 - [ ] All required files created (weather.py, weather_api.py, favorites.py, config.example.py)
 - [ ] .gitignore properly excludes config.py
 - [ ] All CLI commands work (current, forecast, favorites)
-- [ ] Tests pass locally (\`pytest lab08/tests/\`)
+- [ ] Tests pass locally (\`pytest module08/tests/\`)
 - [ ] GitHub Actions shows green checkmark
 - [ ] Code follows PEP 8 style guidelines
 - [ ] Functions have NumPy-style docstrings

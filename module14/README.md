@@ -67,17 +67,17 @@ Before starting this lab, ensure you have:
 
 ## Part 1: Project Setup
 
-Create a new Rust project in your lab14/ folder:
+Create a new Rust project in your module14/ folder:
 
 ```bash
-cd lab14
+cd module14
 cargo new passgen
 cd passgen
 ```
 
 ### Add Dependencies
 
-Edit `lab14/passgen/Cargo.toml`:
+Edit `module14/passgen/Cargo.toml`:
 
 ```toml
 [package]
@@ -95,7 +95,7 @@ rand = "0.8"
 Your final structure should look like:
 
 ```
-lab14/
+module14/
 └── passgen/
     ├── Cargo.toml
     ├── src/
@@ -111,7 +111,7 @@ lab14/
 
 ## Part 2: Password Generator Module
 
-Create `lab14/passgen/src/generator.rs` with password generation functionality.
+Create `module14/passgen/src/generator.rs` with password generation functionality.
 
 ### Requirements
 
@@ -169,7 +169,7 @@ pub fn generate_random(length: usize, use_symbols: bool) -> String {
 
 ## Part 3: Password Validator Module
 
-Create `lab14/passgen/src/validator.rs` with password strength validation.
+Create `module14/passgen/src/validator.rs` with password strength validation.
 
 ### Password Strength Enum
 
@@ -227,7 +227,7 @@ pub fn validate_strength(password: &str) -> PasswordStrength {
 
 ## Part 4: Library Module
 
-Create `lab14/passgen/src/lib.rs` to export your modules:
+Create `module14/passgen/src/lib.rs` to export your modules:
 
 ```rust
 pub mod generator;
@@ -242,7 +242,7 @@ pub use validator::{validate_strength, PasswordStrength};
 
 ## Part 5: CLI Application
 
-Create `lab14/passgen/src/main.rs` with the main CLI using clap.
+Create `module14/passgen/src/main.rs` with the main CLI using clap.
 
 ### CLI Commands
 
@@ -345,7 +345,7 @@ fn main() {
 
 ## Part 6: Testing
 
-Create `lab14/passgen/tests/integration_test.rs`:
+Create `module14/passgen/tests/integration_test.rs`:
 
 ```rust
 use passgen::{generate_random, generate_pin, validate_strength, PasswordStrength};
@@ -414,7 +414,7 @@ Test your CLI application:
 
 ```bash
 # Navigate to the passgen directory
-cd lab14/passgen
+cd module14/passgen
 
 # Generate a 20-character password with symbols
 cargo run -- random --length 20 --symbols
@@ -489,7 +489,7 @@ is4010-labs-yourname/
 ├── lab11/                    # Structuring code and data
 ├── lab12/                    # Generics and traits
 ├── lab13/                    # Idiomatic Rust
-└── lab14/                    # Rust CLI application ✓
+└── module14/                    # Rust CLI application ✓
     └── passgen/
         ├── Cargo.toml
         ├── Cargo.lock
@@ -569,7 +569,7 @@ is4010-labs-yourname/
 ### Step 1: Run All Tests
 
 ```bash
-# From lab14/passgen directory
+# From module14/passgen directory
 cargo test
 cargo fmt --check
 cargo clippy -- -D warnings
@@ -593,7 +593,7 @@ cargo run -- validate "TestPassword123!"
 
 ```bash
 # From repository root
-git add lab14/
+git add module14/
 git commit -m "Complete Lab 14: Password Generator CLI"
 git push origin main
 ```

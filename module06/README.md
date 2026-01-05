@@ -54,7 +54,7 @@ Your first task is to create a class that serves as a blueprint for a `Book`. Th
 
 ### Your task
 
-1. In your `is4010-labs` repository, create a new file named `lab06.py`.
+1. In your `is4010-labs` repository, create a new file named `module06.py`.
 2. Inside this file, define a new class named `Book`.
 3. Use an [AI assistant](https://claude.ai/) to help you write the `__init__` constructor method. It should accept `title` (str), `author` (str), and `year` (int) as parameters and store them as attributes on the object.
 4. Next, ask your AI assistant to help you write the `__str__` dunder method. This method should return a user-friendly string that includes the book's title, author, and publication year.
@@ -152,14 +152,14 @@ You **must** create a test file for this lab to get full credit. This gives you 
 
 ### Setting up the test file
 
-1. In your `lab06/` folder, create a new file named `test_lab06.py`.
+1. In your `module06/` folder, create a new file named `test_module06.py`.
 2. Copy the entire code block below into this new file.
 3. **Do not modify the test file** - it's designed to work with any correct implementation.
 
 ```python
-# test_lab06.py
+# test_module06.py
 import pytest
-from lab06 import Book, EBook
+from module06 import Book, EBook
 
 
 # Tests for the base Book class
@@ -238,14 +238,14 @@ def test_ebook_with_different_file_size():
 To run the tests on your local machine:
 
 ```bash
-# Navigate to your lab06 directory
-cd lab06/
+# Navigate to your module06 directory
+cd module06/
 
 # Run the tests
-pytest test_lab06.py
+pytest test_module06.py
 
 # Or run with verbose output to see each test
-pytest -v test_lab06.py
+pytest -v test_module06.py
 ```
 
 If all tests pass, you'll see output like:
@@ -289,17 +289,17 @@ is4010-[your-username]-labs/
 ├── lab05/
 │   ├── lab05.py              # Refactored functions with error handling from Lab 05
 │   └── test_lab05.py         # Test file for Lab 05 functions
-├── lab06/
-│   ├── lab06.py              # Book and EBook classes with inheritance (NEW)
-│   └── test_lab06.py         # Test file for Lab 06 classes (REQUIRED)
+├── module06/
+│   ├── module06.py              # Book and EBook classes with inheritance (NEW)
+│   └── test_module06.py         # Test file for Lab 06 classes (REQUIRED)
 └── README.md                 # Repository description (auto-created by GitHub)
 ```
 
 **Key points about this structure:**
-- **`lab06/lab06.py`**: Contains your `Book` and `EBook` classes with proper constructors, methods, and inheritance
-- **`lab06/test_lab06.py`**: Required test file that validates your classes work correctly (provided test code must be copied exactly)
+- **`module06/module06.py`**: Contains your `Book` and `EBook` classes with proper constructors, methods, and inheritance
+- **`module06/test_module06.py`**: Required test file that validates your classes work correctly (provided test code must be copied exactly)
 - **Cumulative structure**: Your repository now contains work from Labs 01-06, showing progression from basic scripts to object-oriented programming
-- **Class requirements**: Your `lab06.py` should have both classes, a `get_age()` method, proper inheritance with `super()`, and an `if __name__ == '__main__':` testing block
+- **Class requirements**: Your `module06.py` should have both classes, a `get_age()` method, proper inheritance with `super()`, and an `if __name__ == '__main__':` testing block
 
 This organized structure demonstrates your growing skills in Python programming, from procedural code to object-oriented design principles.
 
@@ -385,11 +385,11 @@ This organized structure demonstrates your growing skills in Python programming,
       return f"{parent_str} ({self.file_size} MB)"
   ```
 
-### **Problem: "ModuleNotFoundError: No module named 'lab06'"**
-- **Cause**: Test file can't find your lab06.py file or import issues
+### **Problem: "ModuleNotFoundError: No module named 'module06'"**
+- **Cause**: Test file can't find your module06.py file or import issues
 - **Solution**:
-  - Make sure both `lab06.py` and `test_lab06.py` are in the `lab06/` folder
-  - Check that your file is named exactly `lab06.py` (not `Lab06.py` or `lab6.py`)
+  - Make sure both `module06.py` and `test_module06.py` are in the `module06/` folder
+  - Check that your file is named exactly `module06.py` (not `Lab06.py` or `lab6.py`)
   - Ensure your classes are named exactly `Book` and `EBook`
   - Make sure you've saved the file before running tests
 
@@ -421,7 +421,7 @@ This organized structure demonstrates your growing skills in Python programming,
 ### **Problem: "Tests pass locally but fail on GitHub Actions"**
 - **Cause**: Environment differences or missing files
 - **Solution**:
-  - Make sure you've committed and pushed both `lab06.py` and `test_lab06.py`
+  - Make sure you've committed and pushed both `module06.py` and `test_module06.py`
   - Check that your class names are exactly `Book` and `EBook`
   - Verify that all required methods exist: `__init__`, `__str__`, `get_age`
   - Ensure your `EBook` class properly inherits from `Book`
@@ -447,13 +447,13 @@ When you're stuck, try these specific prompts:
 
 ### **Final checklist before considering the lab complete**
 
-- [ ] `lab06/lab06.py` file exists and contains both `Book` and `EBook` classes
+- [ ] `module06/module06.py` file exists and contains both `Book` and `EBook` classes
 - [ ] `Book` class has `__init__`, `__str__`, and `get_age` methods
 - [ ] `EBook` class inherits from `Book` and overrides `__str__` method
 - [ ] Both classes use proper [docstrings](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings) for documentation
 - [ ] File includes `if __name__ == '__main__':` block for testing
-- [ ] `lab06/test_lab06.py` file exists with provided test code copied exactly
-- [ ] Local testing: `pytest lab06/test_lab06.py` passes all tests
+- [ ] `module06/test_module06.py` file exists with provided test code copied exactly
+- [ ] Local testing: `pytest module06/test_module06.py` passes all tests
 - [ ] All files have been committed and pushed to [GitHub](https://github.com/)
 - [ ] [GitHub Actions](https://docs.github.com/en/actions) workflow shows a **green checkmark ✅**
 
@@ -463,10 +463,10 @@ When you're stuck, try these specific prompts:
 
 ## Submission
 
-To complete this lab, commit and push both your `lab06.py` and `test_lab06.py` files to your `is4010-labs` [GitHub](https://github.com/) repository.
+To complete this lab, commit and push both your `module06.py` and `test_module06.py` files to your `is4010-labs` [GitHub](https://github.com/) repository.
 
 ```bash
-git add lab06.py test_lab06.py
+git add module06.py test_module06.py
 git commit -m "Complete lab 06: object-oriented programming"
 git push origin main
 ```
@@ -474,7 +474,7 @@ git push origin main
 Your grade for this lab is determined by the successful completion of the [GitHub Action](https://docs.github.com/en/actions), indicated by the green checkmark in your repository's "Actions" tab. The automated tests will verify that your classes are properly implemented with correct inheritance relationships and method functionality.
 
 **Verification steps:**
-1. Check that your local tests pass: `pytest lab06/test_lab06.py`
+1. Check that your local tests pass: `pytest module06/test_module06.py`
 2. Verify both files are committed: `git status` should show "nothing to commit"
 3. Confirm files are pushed: Check your GitHub repository online
 4. Monitor the Actions tab for the green checkmark indicating successful automated testing

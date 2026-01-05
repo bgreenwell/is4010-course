@@ -607,8 +607,8 @@ is4010-labs-yourname/
 ├── lab10/                 # Ownership and borrowing
 ├── lab11/                 # Structuring code and data
 ├── lab12/                 # Generics and traits
-└── lab13/                 # Idiomatic Rust ✓
-    └── lab13/
+└── module13/                 # Idiomatic Rust ✓
+    └── module13/
         ├── Cargo.toml
         ├── Cargo.lock
         ├── src/
@@ -626,7 +626,7 @@ This demonstrates your progression through advanced Rust concepts, from basic sy
 
 ```bash
 # From repository root
-cd lab13
+cd module13
 
 # Run all tests
 cargo test
@@ -897,7 +897,7 @@ Both nodes see the update!"
 
 ```bash
 # From repository root
-cd lab13
+cd module13
 
 # Run all tests
 cargo test
@@ -915,7 +915,7 @@ cargo clippy -- -D warnings
 
 ```bash
 # From repository root
-git add lab13/
+git add module13/
 git commit -m "Complete Lab 13: Idiomatic Rust"
 git push origin main
 ```

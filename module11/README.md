@@ -130,14 +130,14 @@ Rust's [module system](https://doc.rust-lang.org/book/ch07-00-managing-growing-p
 
 ```bash
 # From your is4010-labs directory
-cargo new lab11 --bin
-cd lab11
+cargo new module11 --bin
+cd module11
 ```
 
 This creates a new [binary crate](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html#packages-and-crates) (executable program) with this structure:
 
 ```
-lab11/
+module11/
 ├── Cargo.toml          # Package manifest
 └── src/
     └── main.rs         # Entry point with main()
@@ -1173,7 +1173,7 @@ mkdir -p .github/workflows
 
 **Step 2: Create workflow file**
 
-Create `.github/workflows/lab11.yml`:
+Create `.github/workflows/module11.yml`:
 
 ```yaml
 name: Lab 11 Tests
@@ -1181,10 +1181,10 @@ name: Lab 11 Tests
 on:
   push:
     paths:
-      - 'lab11/**'
+      - 'module11/**'
   pull_request:
     paths:
-      - 'lab11/**'
+      - 'module11/**'
 
 jobs:
   test:
@@ -1201,20 +1201,20 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Build lab11
-        run: cargo build --manifest-path lab11/Cargo.toml --verbose
+      - name: Build module11
+        run: cargo build --manifest-path module11/Cargo.toml --verbose
 
-      - name: Run lab11 tests
-        run: cargo test --manifest-path lab11/Cargo.toml --verbose
+      - name: Run module11 tests
+        run: cargo test --manifest-path module11/Cargo.toml --verbose
 
       - name: Run cargo check
-        run: cargo check --manifest-path lab11/Cargo.toml
+        run: cargo check --manifest-path module11/Cargo.toml
 ```
 
 **Step 3: Commit and push workflow**
 
 ```bash
-git add .github/workflows/lab11.yml
+git add .github/workflows/module11.yml
 git commit -m "Add Lab 11 CI/CD workflow"
 git push origin main
 ```
@@ -1255,12 +1255,12 @@ is4010-labs/
 │   └── workflows/
 │       ├── lab09.yml           # From Lab 09
 │       ├── lab10.yml           # From Lab 10
-│       └── lab11.yml           # NEW: Lab 11 CI/CD
+│       └── module11.yml           # NEW: Lab 11 CI/CD
 ├── lab09/                      # Previous lab
 │   └── ...
 ├── lab10/                      # Previous lab
 │   └── ...
-├── lab11/                      # NEW: This lab
+├── module11/                      # NEW: This lab
 │   ├── Cargo.toml             # Package manifest
 │   ├── Cargo.lock             # Dependency lock file (auto-generated)
 │   ├── target/                # Build outputs (gitignored)
@@ -1274,12 +1274,12 @@ is4010-labs/
 **Important files:**
 - `src/student.rs`: All types (Student, Grade, CourseGrade, StudentDatabase)
 - `src/main.rs`: Demo usage in `main()` function
-- `.github/workflows/lab11.yml`: CI/CD configuration
+- `.github/workflows/module11.yml`: CI/CD configuration
 
 **Verify before submitting:**
 
 ```bash
-# From lab11 directory
+# From module11 directory
 cargo build        # Should build without errors
 cargo test         # Should pass all tests
 cargo run          # Should execute demonstration
@@ -1417,7 +1417,7 @@ Check:
 
 ### Cargo and build issues
 
-**Error: "could not compile `lab11`"**
+**Error: "could not compile `module11`"**
 ```
 Steps:
 1. Read error message carefully (Rust errors are helpful!)
@@ -1426,7 +1426,7 @@ Steps:
 4. Run `cargo build` when fixed
 ```
 
-**Error: "package `lab11` cannot be built because it requires rustc 1.70"**
+**Error: "package `module11` cannot be built because it requires rustc 1.70"**
 ```
 Solution: Update Rust:
   rustup update stable
@@ -1657,9 +1657,9 @@ Before submitting, verify:
 - [ ] GitHub Actions CI passing (green checkmark)
 
 **Repository structure:**
-- [ ] lab11/ directory exists in is4010-labs
+- [ ] module11/ directory exists in is4010-labs
 - [ ] Contains Cargo.toml and src/ directory
-- [ ] .github/workflows/lab11.yml exists
+- [ ] .github/workflows/module11.yml exists
 - [ ] Follows structure shown in "Expected repository structure" section
 
 **Documentation:**
@@ -1674,7 +1674,7 @@ Before submitting, verify:
 ### Step 1: Final build and test
 
 ```bash
-cd lab11
+cd module11
 
 # Clean and rebuild
 cargo clean
@@ -1691,8 +1691,8 @@ cargo run
 
 ```bash
 # From is4010-labs root
-git add lab11/
-git add .github/workflows/lab11.yml
+git add module11/
+git add .github/workflows/module11.yml
 
 # Descriptive commit message
 git commit -m "Complete Lab 11: Student management system with modules, structs, enums, and collections"
@@ -1707,7 +1707,7 @@ git push origin main
 ### Step 4: Verify on GitHub
 
 1. Go to your repository: `https://github.com/yourusername/is4010-labs`
-2. Check lab11 directory is present
+2. Check module11 directory is present
 3. Go to **Actions** tab
 4. Verify "Lab 11 Tests" workflow passed (green checkmark)
 5. If red X, click on it to see errors and fix them

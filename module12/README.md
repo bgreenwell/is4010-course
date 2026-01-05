@@ -62,8 +62,8 @@ This is the power of **generic programming** - write once, use everywhere!
 
 ```bash
 # From your is4010-labs directory
-cargo new lab12 --bin
-cd lab12
+cargo new module12 --bin
+cd module12
 ```
 
 ### Set up the initial structure
@@ -488,8 +488,8 @@ is4010-labs-yourname/
 ├── lab09/                 # Rust basics
 ├── lab10/                 # Ownership and borrowing
 ├── lab11/                 # Structuring code and data
-└── lab12/                 # Generics and traits ✓
-    └── lab12/
+└── module12/                 # Generics and traits ✓
+    └── module12/
         ├── Cargo.toml
         ├── Cargo.lock
         └── src/
@@ -747,7 +747,7 @@ The bound `T: fmt::Display` says 'this implementation only works for types that 
 
 ```bash
 # From is4010-labs root
-git add lab12/
+git add module12/
 git commit -m "Complete Lab 12: Generic Stack Implementation"
 git push origin main
 ```

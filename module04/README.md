@@ -42,19 +42,19 @@ Before starting this lab, ensure you have:
 
 ## Instructions
 
-1.  In your forked repository, navigate to the `lab04/` folder and create a new markdown file named `lab04_prompts.md`. This is where you will document your AI interactions.
+1.  In your forked repository, navigate to the `module04/` folder and create a new markdown file named `module04_prompts.md`. This is where you will document your AI interactions.
 2.  For each of the three problems below:
     a.  Craft a prompt asking a conversational AI (like google gemini) to recommend the best data structure. Your prompt should describe the problem clearly.
-    b.  In `lab04_prompts.md`, record the **exact prompt** you used and the **AI's recommendation and reasoning**.
-    c.  Create a new file named `lab04.py`.
-    d.  In `lab04.py`, write the python function that solves the problem, using the AI-recommended data structure. Use the function stubs provided below.
-3.  You can test your work locally by creating a `test_lab04.py` file and using `pytest`, or you can commit and push your code to get feedback from the automated tests in github actions.
+    b.  In `module04_prompts.md`, record the **exact prompt** you used and the **AI's recommendation and reasoning**.
+    c.  Create a new file named `module04.py`.
+    d.  In `module04.py`, write the python function that solves the problem, using the AI-recommended data structure. Use the function stubs provided below.
+3.  You can test your work locally by creating a `test_module04.py` file and using `pytest`, or you can commit and push your code to get feedback from the automated tests in github actions.
 
 ---
 
 ## Problems and python function stubs
 
-Copy the function stubs below into your `lab04.py` file.
+Copy the function stubs below into your `module04.py` file.
 
 ### Problem 1: Finding common items
 
@@ -140,14 +140,14 @@ You can test your functions locally using pytest. This helps ensure your impleme
 
 ### Setting up the test file
 
-1. In your `lab04/` folder, create a new file named `test_lab04.py`.
+1. In your `module04/` folder, create a new file named `test_module04.py`.
 2. Copy the entire code block below into this new file.
 3. **Do not modify the test file** - it's designed to work with any correct implementation.
 
 ```python
-# test_lab04.py
+# test_module04.py
 import pytest
-from lab04 import find_common_elements, find_user_by_name, get_list_of_even_numbers
+from module04 import find_common_elements, find_user_by_name, get_list_of_even_numbers
 
 
 # Tests for find_common_elements
@@ -258,14 +258,14 @@ def test_get_list_of_even_numbers_negative():
 To run the tests on your local machine:
 
 ```bash
-# Navigate to your lab04 directory
-cd lab04/
+# Navigate to your module04 directory
+cd module04/
 
 # Run the tests
-pytest test_lab04.py
+pytest test_module04.py
 
 # Or run with verbose output to see each test
-pytest -v test_lab04.py
+pytest -v test_module04.py
 ```
 
 If all tests pass, you'll see output like:
@@ -300,17 +300,17 @@ is4010-[your-username]-labs/
 ├── lab03/
 │   ├── lab03.py              # Mad Libs function and guessing game from Lab 03
 │   └── test_lab03.py         # Test file for Lab 03 functions
-├── lab04/
-│   ├── lab04.py              # Data structure functions (NEW)
-│   ├── lab04_prompts.md      # AI interaction documentation (NEW)
-│   └── test_lab04.py         # Test file for Lab 04 functions (OPTIONAL)
+├── module04/
+│   ├── module04.py              # Data structure functions (NEW)
+│   ├── module04_prompts.md      # AI interaction documentation (NEW)
+│   └── test_module04.py         # Test file for Lab 04 functions (OPTIONAL)
 └── README.md                 # Repository description (auto-created by GitHub)
 ```
 
 **Key points about this structure:**
-- **`lab04/lab04.py`**: Contains your three completed functions using AI-recommended data structures
-- **`lab04/lab04_prompts.md`**: Documents your AI interactions and the reasoning behind data structure choices
-- **`lab04/test_lab04.py`**: Optional test file for local testing (the GitHub Actions workflow will run similar tests automatically)
+- **`module04/module04.py`**: Contains your three completed functions using AI-recommended data structures
+- **`module04/module04_prompts.md`**: Documents your AI interactions and the reasoning behind data structure choices
+- **`module04/test_module04.py`**: Optional test file for local testing (the GitHub Actions workflow will run similar tests automatically)
 - **Cumulative structure**: Your repository now contains work from Labs 01-04, showing progression through the course
 
 This organized structure makes it easy to track your learning progression and demonstrates professional code organization practices.
@@ -335,14 +335,14 @@ This organized structure makes it easy to track your learning progression and de
 - "I need to look up user profiles by username frequently. What's the most efficient data structure for this in Python?"
 - "I need to filter a list but keep the original order. What approach should I take?"
 
-### **Problem: "ModuleNotFoundError: No module named 'lab04'"**
-- **Cause**: The test file can't find your `lab04.py` file
+### **Problem: "ModuleNotFoundError: No module named 'module04'"**
+- **Cause**: The test file can't find your `module04.py` file
 - **Solution**:
-  - Make sure `lab04.py` and `test_lab04.py` are both in the `lab04/` folder
-  - Check that your file is named exactly `lab04.py` (not `Lab04.py` or `lab4.py`)
+  - Make sure `module04.py` and `test_module04.py` are both in the `module04/` folder
+  - Check that your file is named exactly `module04.py` (not `Lab04.py` or `lab4.py`)
   - Ensure you've saved the file before running tests
 
-### **Problem: "AttributeError: module 'lab04' has no attribute 'find_common_elements'"**
+### **Problem: "AttributeError: module 'module04' has no attribute 'find_common_elements'"**
 - **Cause**: Your function name doesn't match exactly what the test expects
 - **Solution**:
   - Check that your function is named exactly `find_common_elements` (with underscore, not camelCase)
@@ -366,7 +366,7 @@ This organized structure makes it easy to track your learning progression and de
 ### **Problem: "Tests pass locally but fail on GitHub Actions"**
 - **Cause**: Environment differences or missing files
 - **Solution**:
-  - Make sure you've committed and pushed both `lab04.py` and `test_lab04.py`
+  - Make sure you've committed and pushed both `module04.py` and `test_module04.py`
   - Check that your imports are correct
   - Verify your function names match exactly
   - Ensure your functions handle edge cases (empty lists, None values, etc.)
@@ -421,25 +421,25 @@ This organized structure makes it easy to track your learning progression and de
 
 ### **Final checklist before considering the lab complete**
 
-- [ ] `lab04/lab04.py` file exists and contains all three required functions
-- [ ] `lab04/lab04_prompts.md` file exists with your AI interactions documented
-- [ ] `lab04/test_lab04.py` file exists (optional for local testing)
+- [ ] `module04/module04.py` file exists and contains all three required functions
+- [ ] `module04/module04_prompts.md` file exists with your AI interactions documented
+- [ ] `module04/test_module04.py` file exists (optional for local testing)
 - [ ] All functions use appropriate data structures as recommended by AI
 - [ ] Functions handle edge cases (empty lists, non-existent users, etc.)
-- [ ] If testing locally: `pytest lab04/test_lab04.py` passes all tests
+- [ ] If testing locally: `pytest module04/test_module04.py` passes all tests
 - [ ] All files have been committed and pushed to GitHub
 - [ ] GitHub Actions workflow shows a **green checkmark ✅**
 
-**💡 Pro tip:** Document your AI interactions in `lab04_prompts.md` as you work. This helps you remember the reasoning behind your choices and demonstrates your prompt engineering skills!
+**💡 Pro tip:** Document your AI interactions in `module04_prompts.md` as you work. This helps you remember the reasoning behind your choices and demonstrates your prompt engineering skills!
 
 -----
 
 ## Submission
 
-To complete this lab, commit and push both your `lab04.py` and `lab04_prompts.md` files to your forked GitHub repository.
+To complete this lab, commit and push both your `module04.py` and `module04_prompts.md` files to your forked GitHub repository.
 
 ```
-git add lab04.py lab04_prompts.md
+git add module04.py module04_prompts.md
 git commit -m "Complete lab 04"
 git push origin main
 ```

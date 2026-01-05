@@ -46,8 +46,8 @@ Your function must:
 
 ### Instructions
 
-1. In your forked repository, navigate to the `lab03/` folder and create a new file named `lab03.py`.
-2. Copy the following function stub into your `lab03.py` file.
+1. In your forked repository, navigate to the `module03/` folder and create a new file named `module03.py`.
+2. Copy the following function stub into your `module03.py` file.
 3. Replace the `pass` statement with your implementation.
 4. Be creative! Write an engaging, fun story that uses all three words.
 
@@ -119,7 +119,7 @@ Your function must:
 
 ### Instructions
 
-1. In the same `lab03/lab03.py` file, add the import statement and function below.
+1. In the same `module03/module03.py` file, add the import statement and function below.
 2. Complete the function implementation following the detailed requirements.
 3. Add the provided runner code at the very bottom of your file.
 
@@ -167,7 +167,7 @@ def guessing_game():
 
 ### Game runner code
 
-Add this code at the very bottom of your `lab03/lab03.py` file:
+Add this code at the very bottom of your `module03/module03.py` file:
 
 ```python
 if __name__ == '__main__':
@@ -212,15 +212,15 @@ Tests verify that your functions work correctly by checking their outputs agains
 
 ### Instructions for test file
 
-1. In the `lab03/` folder of your forked repository, create a new file named `test_lab03.py`.
+1. In the `module03/` folder of your forked repository, create a new file named `test_module03.py`.
 2. Copy the entire code block below into this new file.
 3. **Do not modify the test file** - it's designed to work with any correct implementation.
 
 ```python
-# test_lab03.py
+# test_module03.py
 import random
 from unittest.mock import patch
-from lab03 import generate_mad_lib, guessing_game
+from module03 import generate_mad_lib, guessing_game
 
 def test_generate_mad_lib():
     """
@@ -281,8 +281,8 @@ def test_guessing_game():
     3. The game terminates when the correct number is guessed
     4. Attempt counting works correctly
     """
-    # Mock random.randint in the lab03 module to return a predictable number (50)
-    with patch('lab03.random.randint', return_value=50):
+    # Mock random.randint in the module03 module to return a predictable number (50)
+    with patch('module03.random.randint', return_value=50):
         # Mock input() to simulate user guesses: too high, too low, correct
         with patch('builtins.input', side_effect=['75', '25', '50']):
             # Mock print() to capture output
@@ -311,7 +311,7 @@ def test_guessing_game():
                 assert contains_range or contains_feedback, "Game should provide range info or feedback"
     
     # Test edge case: immediate correct guess
-    with patch('lab03.random.randint', return_value=42):
+    with patch('module03.random.randint', return_value=42):
         with patch('builtins.input', side_effect=['42']):
             with patch('builtins.print') as mock_print:
                 guessing_game()
@@ -473,7 +473,7 @@ is4010-[username]-labs/
 ├── .github/workflows/     # CI/CD automation
 ├── lab01/                 # Introduction to Git and GitHub
 ├── lab02/                 # AI-assisted Python development
-├── lab03/                 # Python basics and automated testing
+├── module03/                 # Python basics and automated testing
 ├── lab04/                 # [Future labs will be added here]
 └── README.md             # This file
 ```
@@ -553,9 +553,9 @@ is4010-[your-username]-labs/
 ├── lab02/
 │   ├── lab02.py              # AI-assisted functions from Lab 02
 │   └── lab02_prompts.md      # Prompt engineering solutions from Lab 02
-├── lab03/
-│   ├── lab03.py              # Mad Libs function and guessing game
-│   └── test_lab03.py         # Test file for both functions
+├── module03/
+│   ├── module03.py              # Mad Libs function and guessing game
+│   └── test_module03.py         # Test file for both functions
 └── README.md                 # Professional repository documentation with CI/CD badge
 ```
 
@@ -565,8 +565,8 @@ is4010-[your-username]-labs/
 - **`lab01/hello.py`**: Your first Python program from Lab 01
 - **`lab02/lab02.py`**: AI-assisted functions (factorial, prime checker, etc.) from Lab 02
 - **`lab02/lab02_prompts.md`**: Prompt engineering solutions and AI debugging examples from Lab 02
-- **`lab03/lab03.py`**: Contains both the `generate_mad_lib()` and `guessing_game()` functions
-- **`lab03/test_lab03.py`**: Contains tests for both functions to ensure they work correctly
+- **`module03/module03.py`**: Contains both the `generate_mad_lib()` and `guessing_game()` functions
+- **`module03/test_module03.py`**: Contains tests for both functions to ensure they work correctly
 - **Hidden folder**: The `.github` folder starts with a dot, making it a hidden folder that GitHub uses for configuration
 
 This organized structure makes it easy to find your work, presents a professional image to potential employers, and ensures the automated testing system can locate and run your tests properly.
@@ -576,8 +576,8 @@ This organized structure makes it easy to find your work, presents a professiona
 ## Final step: Pushing and verification
 
 1. You should now have **four** new/modified files:
-   - `lab03/lab03.py` (Mad Libs and guessing game functions)
-   - `lab03/test_lab03.py` (test suite)
+   - `module03/module03.py` (Mad Libs and guessing game functions)
+   - `module03/test_module03.py` (test suite)
    - `.github/workflows/main.yml` (CI/CD workflow)
    - `README.md` (professional repository documentation)
 
@@ -610,14 +610,14 @@ This organized structure makes it easy to find your work, presents a professiona
 
 Programming and automated testing can be challenging! Here are solutions to common issues:
 
-### **Problem: "ModuleNotFoundError: No module named 'lab03'"**
-- **Cause**: The test file can't find your `lab03.py` file
+### **Problem: "ModuleNotFoundError: No module named 'module03'"**
+- **Cause**: The test file can't find your `module03.py` file
 - **Solution**: 
-  - Make sure `lab03.py` and `test_lab03.py` are both in the `lab03/` folder
-  - Check that your file is named exactly `lab03.py` (not `Lab03.py` or `lab3.py`)
-  - Ensure you've committed and pushed `lab03/lab03.py` to GitHub
+  - Make sure `module03.py` and `test_module03.py` are both in the `module03/` folder
+  - Check that your file is named exactly `module03.py` (not `Lab03.py` or `lab3.py`)
+  - Ensure you've committed and pushed `module03/module03.py` to GitHub
 
-### **Problem: "AttributeError: module 'lab03' has no attribute 'generate_mad_lib'"**
+### **Problem: "AttributeError: module 'module03' has no attribute 'generate_mad_lib'"**
 - **Cause**: Your function name doesn't match exactly what the test expects
 - **Solution**: 
   - Check that your function is named exactly `generate_mad_lib` (not `generate_madlib` or `generateMadLib`)
@@ -658,13 +658,13 @@ Programming and automated testing can be challenging! Here are solutions to comm
 - **Solution**:
   - Click the badge or go to Actions tab to see detailed error messages
   - Check that all files are committed and pushed (use `git status`)
-  - Verify test file is in the correct location (`lab03/test_lab03.py`)
+  - Verify test file is in the correct location (`module03/test_module03.py`)
   - Make sure there are no `import` errors in the GitHub Actions log
 
 ### **Problem: README not displaying on repository home page**
 - **Cause**: File not in root directory or incorrect filename
 - **Solution**:
-  - Make sure `README.md` is in the **root** of your repository, not inside `lab03/`
+  - Make sure `README.md` is in the **root** of your repository, not inside `module03/`
   - File must be named exactly `README.md` (all caps, `.md` extension)
   - Verify it's committed and pushed to GitHub
   - Refresh your browser or clear cache if you just pushed it
@@ -685,12 +685,12 @@ Don't hesitate to use AI tools to help debug issues:
 
 ### Final checklist before considering the lab complete
 
-- [ ] `lab03/lab03.py` file exists and contains both required functions
-- [ ] `lab03/test_lab03.py` file exists with the provided test code (unmodified)
-- [ ] `.github/workflows/main.yml` file exists with the provided workflow configuration (uses `pytest` not `pytest lab03/`)
+- [ ] `module03/module03.py` file exists and contains both required functions
+- [ ] `module03/test_module03.py` file exists with the provided test code (unmodified)
+- [ ] `.github/workflows/main.yml` file exists with the provided workflow configuration (uses `pytest` not `pytest module03/`)
 - [ ] `README.md` file exists in repository root with CI/CD badge
 - [ ] Badge URL customized with your username and repository name
 - [ ] All files have been committed and pushed to GitHub
 - [ ] GitHub Actions workflow shows a **green checkmark ✅** in Actions tab
 - [ ] CI/CD badge in README shows "passing" status
-- [ ] You can run your guessing game locally by executing `python lab03/lab03.py`
+- [ ] You can run your guessing game locally by executing `python module03/module03.py`

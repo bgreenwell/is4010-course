@@ -78,8 +78,8 @@ The [borrow checker](https://doc.rust-lang.org/book/ch04-02-references-and-borro
 1. **Create the project:**
    ```bash
    cd is4010-labs
-   cargo new lab10 --bin
-   cd lab10
+   cargo new module10 --bin
+   cd module10
    ```
 
 2. **Replace `src/main.rs` with the starter code below** (includes 7 progressively challenging problems)
@@ -105,7 +105,7 @@ The [borrow checker](https://doc.rust-lang.org/book/ch04-02-references-and-borro
 
 ### Starter Code for Part 1
 
-Copy this entire code block into `lab10/src/main.rs`:
+Copy this entire code block into `module10/src/main.rs`:
 
 ```rust
 // Lab 10: The Borrow Checker Game
@@ -326,7 +326,7 @@ Now that you've learned to **fix** ownership errors, it's time to **write correc
 
 ### Instructions
 
-1. **Continue in the same `lab10` project**
+1. **Continue in the same `module10` project**
 
 2. **Add the following exercises to your `src/main.rs`** (after the problem functions, before the test module)
 
@@ -438,7 +438,7 @@ is4010-labs/
 ├── lab06/                         # Object-oriented programming
 ├── lab07/                         # Files and JSON
 ├── lab09/                         # Rust introduction
-└── lab10/                         # ⭐ THIS LAB
+└── module10/                         # ⭐ THIS LAB
     ├── Cargo.toml                 # Rust project configuration
     ├── Cargo.lock                 # Dependency lock file
     ├── src/
@@ -967,7 +967,7 @@ Before committing, ensure your code meets professional standards:
 
 ```bash
 # Navigate to your lab
-cd lab10
+cd module10
 
 # Run all tests
 cargo test
@@ -993,7 +993,7 @@ cargo check
 cd ..  # Now in is4010-labs/
 
 # Stage your lab
-git add lab10/
+git add module10/
 
 # Check what's being committed
 git status
@@ -1054,7 +1054,7 @@ Before considering the lab complete, verify:
 **Git & GitHub:**
 - [ ] Code committed with descriptive message
 - [ ] Code pushed to `origin main`
-- [ ] Repository contains `lab10/` folder with all required files
+- [ ] Repository contains `module10/` folder with all required files
 - [ ] No build artifacts committed (target/ is in .gitignore)
 
 **Learning Verification:**
